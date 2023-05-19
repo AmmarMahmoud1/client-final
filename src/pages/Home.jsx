@@ -1,17 +1,48 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
+import home from "./home.css"
+
+
 
 const Home = () => {
+  const [allDucks, setAllDucks] = useState();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        //const { data } = await axios(`${import.meta.env.VITE_API_URL}/ducks`);
+        //setAllDucks(data);
+        setLoading(false);
+      } catch (error) {
+        console.error(
+          error.message || 'Ducks have gone over the hill and far away.'
+        );
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   return (
-    <main className="w-full flex flex-col items-center mt-[-1px] dark:bg-slate-700 h-fit">
-      <div className="w-fit mt-28 p-4 flex flex-col items-center">
-        <h1 className="text-3xl font-semibold mb-8">Search and Offers</h1>
-        <h3 className="text-lg font-thin mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime rerum
-          maiores voluptas distinctio animi nostrum.
-        </h3>
-        <hr className="w-1/3" />
-      </div>
-    </main>
+    <React.Fragment><div className="container">
+
+    <div className="Header">
+    
+    <h1>Title</h1>
+    <h1>OfferComponent</h1>
+    </div>
+    
+    <div className="Middle">
+    <h1>ImageCarosuel</h1>
+    </div>
+    <div className="Footer">
+    <h1>CityAddress</h1>
+    <h1>Email</h1>
+    </div>
+    </div></React.Fragment>
+    
+    
   );
 };
 
