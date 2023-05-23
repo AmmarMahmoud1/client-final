@@ -10,7 +10,7 @@ const Search = () => {
         placeholder="Search...."
       />
       <hr className="bg-slate-400 h-1 absolute h-[2.5rem] w-px ml-48" />
-      <FaSearch className="absolute h-10 ms-20 ml-52 hover:bg-slate-300 w-5 cursor-pointer" />
+      <FaSearch className="absolute h-10 ms-18 ml-52 hover:bg-slate-300 w-5 cursor-pointer" />
     </div>
   );
 };
